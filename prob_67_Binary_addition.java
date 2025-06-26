@@ -12,7 +12,7 @@ Given two binary strings a and b, return their sum as a binary string.
 
  */
 
-public class Binary_addition {
+public class prob_67_Binary_addition {
     public String addBinary(String a, String b) {
         int sum = 0, carry = 0;
         StringBuilder res = new StringBuilder();
