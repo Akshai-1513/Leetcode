@@ -28,16 +28,7 @@ public class prob_1295_find_even_count {
     public int findNumbers(int[] nums) {
         int count = 0;
         for(int i : nums){
-            if(count_nums(i) % 2 == 0) count++;
-        }
-        return count;
-    }
-
-    static int count_nums(int num){
-        int count = 0;
-        while(num > 0){
-            num /= 10;
-            count++;
+            if((int)(Math.log10(i) + 1) % 2 == 0) count++;
         }
         return count;
     }
