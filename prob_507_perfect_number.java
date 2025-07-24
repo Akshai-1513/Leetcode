@@ -33,21 +33,13 @@ public class prob_507_perfect_number {
             if(num % i == 0) {
                 if(num / i == i) {
                     sum += i;
-                    System.out.println(sum);
                 }
                 else {
                     sum += i + (num / i);
-                    System.out.println(sum);
                 }
             }
         }
         if(sum == num) return true;
         return false;
-    }
-
-    public static void main(String[] args) {
-        int num = 28;
-        if(checkPerfectNumber(num)) System.out.println(true);
-        else System.out.println(false);
     }
 }
