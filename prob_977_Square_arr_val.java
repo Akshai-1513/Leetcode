@@ -1,0 +1,68 @@
+/*
+977. Squares of a Sorted Array
+    Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+
+Example 1:
+    Input: nums = [-4,-1,0,3,10]
+    Output: [0,1,9,16,100]
+    Explanation: After squaring, the array becomes [16,1,0,9,100].
+    After sorting, it becomes [0,1,9,16,100].
+
+Example 2:
+    Input: nums = [-7,-3,2,3,11]
+    Output: [4,9,9,49,121]
+
+Constraints:
+    1 <= nums.length <= 104
+    -104 <= nums[i] <= 104
+    nums is sorted in non-decreasing order.
+
+    Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
+ */
+
+import java.util.Arrays;
+
+public class prob_977_Square_arr_val {
+
+    // Time complexity: O(n^2)
+    public int[] sortedSquares(int[] nums) {
+        for (int i = 0; i < nums.length; i++){
+            nums[i] = nums[i] * nums[i];
+        }
+        sort(nums);
+        return nums;
+    }
+
+    int[] sort(int nums[]){
+        for(int i = 0; i < nums.length; i++){
+            int min = nums[i];
+            int index = i;
+            for(int j = i; j < nums.length; j++){
+                if(nums[j] < min) {
+                    min = nums[j];
+                    index = j;
+                }
+            }
+            swap(nums, i , index);
+        }
+        return nums;
+    }
+
+    void swap(int nums[], int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    /*
+    Time Complexity: O(n):
+        public int[] sortedSquares(int[] nums) {
+            for (int i = 0; i < nums.length; i++){
+                nums[i] = nums[i] * nums[i];
+            }
+            Arrays.sort(nums);
+            return nums;
+        }
+     */
+}
+
