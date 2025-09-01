@@ -1,4 +1,3 @@
-import java.util.*;
 /*
 3005. Count Elements With Maximum Frequency
     You are given an array nums consisting of positive integers.
@@ -24,16 +23,14 @@ Constraints:
 
 public class prob_3005_count_ele_with_maxfreq {
     public int maxFrequencyElements(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i : nums) map.put(i, map.getOrDefault(i, 0) + 1);
+        int[] arr = new int[101];
+        for(int i = 0; i < nums.length; i++){
+            arr[nums[i]]++;
+        }
         int max = 0;
-        for(Map.Entry<Integer, Integer> entry : map.entrySet()){
-            max = (entry.getValue() > max) ? entry.getValue() : max;
-        }
+        for(int i : arr) max = (max < i) ? i : max;
         int tot = 0;
-        for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if(max == entry.getValue()) tot += entry.getValue();
-        }
+        for(int i : arr) if(i == max) tot += i;
         return tot;
     }
 }
