@@ -49,10 +49,4 @@ public class prob_1935_max_no_we_can_type {
         }
         return count;
     }
-
-    public static void main(String[] args) {
-        String text = "hello world";
-        String btext = "ad";
-        System.out.println(canBeTypedWords(text,btext));
-    }
 }
