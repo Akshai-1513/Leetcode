@@ -27,7 +27,7 @@ Constraints:
  */
 
 public class prob_3370_smallest_no_with_all_set_bits {
-    static int smallestNumber(int n) {
+    public int smallestNumber(int n) {
         int count = 0,  temp = n;
         while(temp > 0){
             temp /= 2;
@@ -43,7 +43,4 @@ public class prob_3370_smallest_no_with_all_set_bits {
         return res;
     }
 
-    public static void main(String[] args) {
-        System.out.println(smallestNumber(5));
-    }
 }
