@@ -1,18 +1,16 @@
 class Solution {
     public int totalMoney(int n) {
-        int sum = 0;
-        int num = 1, count = 0;
+        int count = 0, iter = 1, totalSum = 0;
         while(n > 0){
-            sum += num + count;
-            if(count == 6) {
-                count = 0;
-                num++;
-                n--;
-                continue;
-            }
+            int val = count + iter;
+            totalSum += val;
             count++;
             n--;
+            if(count == 7){
+                count = 0;
+                iter++;
+            }
         }
-        return sum;
+        return totalSum;
     }
 }
